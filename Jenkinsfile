@@ -1,4 +1,6 @@
 pipeline {
+    agent any
+
     environment {
         APP_NAME = "my-node-app"
         BUILD_ARTIFACT = "build.zip"
@@ -52,3 +54,4 @@ pipeline {
         }
     }
 }
+
