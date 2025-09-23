@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools {
-        nodejs "nodejs18"
+        nodejs "nodejs18" // <-- must match the name from Global Tool Config
     }
 
     environment {
@@ -49,13 +49,11 @@ pipeline {
     post {
         success {
             echo "✅ Build succeeded for ${APP_NAME}"
-            echo "Slack notification: Build ${BUILD_NUMBER} succeeded!"
-            echo "Email notification: Build succeeded! To: shivappap77@gmail.com"
         }
         failure {
             echo "❌ Build failed for ${APP_NAME}"
-            echo "Email notification: Build ${BUILD_NUMBER} failed! To: shivappap77@gmail.com"
         }
     }
 }
+
 
