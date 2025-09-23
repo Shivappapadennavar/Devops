@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    tools {
+        nodejs "nodejs18"
+    }
+
     environment {
         APP_NAME = "my-node-app"
         BUILD_ARTIFACT = "build.zip"
@@ -9,7 +13,6 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                // Use the correct GitHub repo
                 git branch: 'main', url: 'https://github.com/Shivappapadennavar/Devops.git'
             }
         }
@@ -55,6 +58,4 @@ pipeline {
         }
     }
 }
-
-
 
