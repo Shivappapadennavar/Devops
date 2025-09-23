@@ -9,7 +9,8 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                git branch: 'main', url: 'https://github.com/shankutanna/Devops.git'
+                // Use the correct GitHub repo
+                git branch: 'main', url: 'https://github.com/Shivappapadennavar/Devops.git'
             }
         }
 
@@ -54,5 +55,6 @@ pipeline {
         }
     }
 }
+
 
 
